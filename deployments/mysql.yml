@@ -1,6 +1,6 @@
 format_version: 10                # pipeline version from gocd, based on this options would vary 
 pipelines: 
-  test: 
+  myql:                                             # name of the pipeline job that will be showing on UI
     group: App-Deployments
     label_template: "${COUNT}"
     materials:
@@ -11,8 +11,8 @@ pipelines:
         shallow_clone: true
         display_order: -1
         lock_behavior: none
-    stages:
-      - dev:
+    stages:                                       
+      - dev:                                        # Name of the stage 
           fetch_materials: true 
           keep_artifacts: false
           clean_workspace: false 
