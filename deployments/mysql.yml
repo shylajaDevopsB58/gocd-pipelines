@@ -16,3 +16,70 @@ pipelines:
     environment_variables:                                                            # Pipeline Varaibles
         COMPONENT: mysql
     template: App-Deployment-Template
+
+    
+    # stages:                                       
+    #   - dev:                                        # Name of the stage 
+    #       fetch_materials: true 
+    #       keep_artifacts: false
+    #       clean_workspace: false
+    #       environment_variables:
+    #         ENV: dev
+    #       secure_variables:
+    #           MYSQL_PSW: "AES:UeSGjqv2jBp/etz6xRrSrw==:vaAKZfVkb+mJJS7vkgLwSA==" 
+    #       jobs:
+    #         Build:
+    #           tasks:
+    #             - exec:
+    #                 command: bash 
+    #                 arguments:
+    #                 - init.sh
+    #   - qa:
+    #       approval:
+    #         type: manual
+    #         allow_only_on_success: true
+    #         environment_variables:
+    #           ENV: qa
+    #       secure_variables:
+    #           MYSQL_PSW: "AES:UeSGjqv2jBp/etz6xRrSrw==:vaAKZfVkb+mJJS7vkgLwSA==" 
+    #       jobs:
+    #         Build:
+    #           tasks:
+    #             - exec:
+    #                 command: bash 
+    #                 arguments:
+    #                 - init.sh
+    #   - stage:
+    #       approval:
+    #         type: manual
+    #         allow_only_on_success: true
+    #         environment_variables:
+    #           ENV: stage
+    #       secure_variables:
+    #           MYSQL_PSW: "AES:UeSGjqv2jBp/etz6xRrSrw==:vaAKZfVkb+mJJS7vkgLwSA==" 
+    #       jobs:
+    #         Build:
+    #           tasks:
+    #             - exec:
+    #                 command: bash 
+    #                 arguments:
+    #                 - init.sh
+
+    #   - prod:
+    #       fetch_materials: true 
+    #       keep_artifacts: false
+    #       clean_workspace: false 
+    #       environment_variables:
+    #           ENV: prod
+    #       secure_variables:
+    #           MYSQL_PSW: "AES:UeSGjqv2jBp/etz6xRrSrw==:vaAKZfVkb+mJJS7vkgLwSA==" 
+    #       approval:
+    #         type: manual
+    #         allow_only_on_success: true
+    #       jobs:
+    #         Build:
+    #           tasks:
+    #             - exec:
+    #                 command: bash 
+    #                 arguments:
+    #                 - init.sh
