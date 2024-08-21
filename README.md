@@ -16,3 +16,16 @@
 All the gocd pipeline will be hosted in this repository.
 
 
+To generate encrypted gocd string :  ( Keep in mind secret encrypted by one GoCD cannot be decrypted by other GoCD )
+[encrypted_password](https://github.com/tomzo/gocd-yaml-config-plugin?tab=readme-ov-file#to-generate-an-encrypted-value)
+
+```
+
+Syntax: 
+```
+    $ curl 'https://ci.example.com/go/api/admin/encrypt' -u 'username:password' -H 'Accept: application/vnd.go.cd.v1+json' -H 'Content-Type: application/json' -X POST -d '{ "value": "badger"}'
+```
+
+$ curl 'http://localhost:8153/go/api/admin/encrypt' -H 'Accept: application/vnd.go.cd.v1+json' -H 'Content-Type: application/json' -X POST -d '{ "value": "DevOps321"}'
+
+$ curl 'http://localhost:8153/go/api/admin/encrypt' -H 'Accept: application/vnd.go.cd.v1+json' -H 'Content-Type: application/json' -X POST -d '{ "value": "ExpenseApp@1"}'

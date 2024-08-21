@@ -19,6 +19,9 @@ pipelines:
           environment_variables:
             ENV: dev
             COMPONENT: mysql 
+          secure_variables:
+              SSH_PSW: "AES:2OIP4os11Nz8gJ+jtzoUMg==:9RKApCuI7ST7rHEU5UsKuA=="
+              MYSQL_PSW: "AES:UeSGjqv2jBp/etz6xRrSrw==:vaAKZfVkb+mJJS7vkgLwSA==" 
           jobs:
             Build:
               tasks:
@@ -33,6 +36,9 @@ pipelines:
             environment_variables:
               ENV: qa
               COMPONENT: mysql 
+          secure_variables:
+              SSH_PSW: "AES:2OIP4os11Nz8gJ+jtzoUMg==:9RKApCuI7ST7rHEU5UsKuA=="
+              MYSQL_PSW: "AES:UeSGjqv2jBp/etz6xRrSrw==:vaAKZfVkb+mJJS7vkgLwSA==" 
           jobs:
             Build:
               tasks:
