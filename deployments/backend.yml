@@ -1,6 +1,6 @@
 format_version: 10                # pipeline version from gocd, based on this options would vary 
 pipelines: 
-  myql:                                             # name of the pipeline job that will be showing on UI
+  backend:                                             # name of the pipeline job that will be showing on UI
     group: App-Deployments
     label_template: "${COUNT}"
     materials:
@@ -18,7 +18,7 @@ pipelines:
           clean_workspace: false
           environment_variables:
             ENV: dev
-            COMPONENT: mysql 
+            COMPONENT: backend 
           jobs:
             Build:
               tasks:
@@ -32,7 +32,7 @@ pipelines:
             allow_only_on_success: true
             environment_variables:
               ENV: qa
-              COMPONENT: mysql 
+              COMPONENT: backend 
           jobs:
             Build:
               tasks:
@@ -46,7 +46,7 @@ pipelines:
             allow_only_on_success: true
             environment_variables:
               ENV: stage
-              COMPONENT: mysql 
+              COMPONENT: backend 
           jobs:
             Build:
               tasks:
@@ -61,7 +61,7 @@ pipelines:
           clean_workspace: false 
           environment_variables:
               ENV: prod
-              COMPONENT: mysql 
+              COMPONENT: backend 
           approval:
             type: manual
             allow_only_on_success: true
