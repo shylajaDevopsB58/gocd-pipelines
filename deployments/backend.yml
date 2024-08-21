@@ -28,7 +28,8 @@ pipelines:
                 - exec:
                     command: bash 
                     arguments:
-                    - init.sh
+                    - init.sh && env 
+
       - qa:
           approval:
             type: manual
