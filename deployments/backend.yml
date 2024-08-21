@@ -29,8 +29,6 @@ pipelines:
                     command: bash 
                     arguments:
                     - init.sh
-                    - && 
-                    - env  
 
       - qa:
           approval:
