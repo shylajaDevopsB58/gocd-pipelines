@@ -28,7 +28,9 @@ pipelines:
                 - exec:
                     command: bash 
                     arguments:
-                    - init.sh && env 
+                    - init.sh
+                    - && 
+                    - env  
 
       - qa:
           approval:
