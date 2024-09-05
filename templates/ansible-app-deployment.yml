@@ -16,7 +16,7 @@ pipelines:
     environment_variables:
         pipeline: "true"
     stages:                                       
-      - dev:                                        # Name of the stage 
+      - dev:                                       
           fetch_materials: true 
           keep_artifacts: false
           clean_workspace: false
