@@ -1,0 +1,42 @@
+format_version: 10                # pipeline version from gocd, based on this options would vary 
+pipelines: 
+  create:                                            
+    group: Terraform
+    label_template: "${COUNT}"
+    materials:
+      mysql-code:
+        git: https://github.com/B58-CloudDevOps/expense-terraform.git
+        branch: main
+        auto_update: true 
+        shallow_clone: true
+        display_order: -1
+        lock_behavior: none
+    secure_variables:
+        SSH_PSW: "AES:2OIP4os11Nz8gJ+jtzoUMg==:9RKApCuI7ST7rHEU5UsKuA=="
+    environment_variables:
+        COMPONENT: frontend
+    stages:                                       
+      - dev:                                       
+          fetch_materials: true 
+          keep_artifacts: false
+          clean_workspace: false
+          environment_variables: { env: dev }
+          approval: { type: manual }
+          jobs:
+            terraform:
+              tasks:
+                - exec: { command: terraform, arguments: ["init", "-backend-config", "env-dev/state.tfvars"] }
+                - exec: { command: terraform, arguments: ["apply", "-var-file", "env-dev/main.tfvars", "-auto-approve"] }
+
+      - prod:                                       
+          fetch_materials: true 
+          keep_artifacts: false
+          clean_workspace: false
+          environment_variables: { env: prod }
+          approval: { type: manual }
+          jobs:
+            terraform:
+              tasks:
+                - exec: { command: terraform, arguments: ["init", "-backend-config", "env-prod/state.tfvars"] }
+                - exec: { command: terraform, arguments: ["apply", "-var-file", "env-prod/main.tfvars", "-auto-approve"] }
+
