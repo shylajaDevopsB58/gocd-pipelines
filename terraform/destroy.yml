@@ -1,4 +1,4 @@
-format_version: 10                # pipeline version from gocd, based on this options would vary 
+format_version: 10                
 pipelines: 
   destroy:                                            
     group: Terraform

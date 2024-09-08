@@ -1,4 +1,4 @@
-format_version: 10                
+{% comment %} format_version: 10                
 pipelines: 
   App-Deployment-Template:                                             
     group: Templates
@@ -80,4 +80,4 @@ pipelines:
                 - exec:
                     command: bash 
                     arguments:
-                    - init.sh
+                    - init.sh {% endcomment %}
