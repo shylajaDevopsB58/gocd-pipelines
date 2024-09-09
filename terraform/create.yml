@@ -4,7 +4,7 @@ pipelines:
     group: Terraform
     label_template: "${COUNT}"
     materials:
-      mysql-code:
+      infra:
         git: https://github.com/B58-CloudDevOps/expense-terraform.git
         branch: main
         auto_update: true 
