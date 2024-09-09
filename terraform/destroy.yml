@@ -16,6 +16,7 @@ pipelines:
         vault_token: "AES:0MnF+owJSEFkTnSRpoRm3Q==:XnoIrHIhEi1FmIt2UFmPY8rf+H03P2Pv7VE7SRt4Zus="
     environment_variables:
         COMPONENT: frontend
+        action: destroy 
     stages:                                       
       - dev:                                       
           fetch_materials: true 
