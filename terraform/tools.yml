@@ -13,7 +13,7 @@ pipelines:
         lock_behavior: none
     secure_variables:
         SSH_PSW: "AES:2OIP4os11Nz8gJ+jtzoUMg==:9RKApCuI7ST7rHEU5UsKuA=="
-        vault_token: AES:0MnF+owJSEFkTnSRpoRm3Q==:XnoIrHIhEi1FmIt2UFmPY8rf+H03P2Pv7VE7SRt4Zus=
+        vault_token: "AES:0MnF+owJSEFkTnSRpoRm3Q==:XnoIrHIhEi1FmIt2UFmPY8rf+H03P2Pv7VE7SRt4Zus="
     stages:                                       
       - infra:                                       
           fetch_materials: true 
