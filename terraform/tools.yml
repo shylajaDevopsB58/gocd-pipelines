@@ -1,6 +1,6 @@
 format_version: 10                
 pipelines: 
-  expense-create:                                            
+  tools-infra-create:                                            
     group: Terraform
     label_template: "${COUNT}"
     materials:
